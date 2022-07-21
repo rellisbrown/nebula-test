@@ -30,5 +30,10 @@ jobs:
       - name: Zip build folder
         run: zip -r test.zip . -x ".git/*" ".github/*"
 
-      - name: Release to Github
-        run: echo "Release"
+      - name: Create Github release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: ${{ github.run_number }}
