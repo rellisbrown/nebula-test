@@ -24,6 +24,9 @@ jobs:
       - name: Build static file
         run: npm run build
 
+      - name: Copy .qext file
+        run: cp deploytest1.qext build/
+
       - name: Zip build folder
         run: (cd build && zip -r ../test.zip .)
 
