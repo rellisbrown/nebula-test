@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Zip build folder
-        run: zip -r test.zip build/ -x ".git/*" ".github/*"
+        run: zip -r -D test.zip build/* -x ".git/*" ".github/*"
 
       - name: Upload zip file
         uses: actions/upload-artifact@v3
