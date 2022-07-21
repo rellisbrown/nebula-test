@@ -24,11 +24,14 @@ jobs:
       - name: Build static file
         run: npm run build
 
-      - name: Navigate to build directory
-        run: cd build
-
       - name: Zip build folder
-        run: zip -r test.zip . -x ".git/*" ".github/*"
+        run: zip -r test.zip build/ -x ".git/*" ".github/*"
+
+      - name: Upload zip file
+      - uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: test.zip
 
       - name: Create Github release
         uses: actions/create-release@v1
