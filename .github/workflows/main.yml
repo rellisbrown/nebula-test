@@ -28,7 +28,7 @@ jobs:
         run: zip -r test.zip build/ -x ".git/*" ".github/*"
 
       - name: Upload zip file
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: test
           path: test.zip
