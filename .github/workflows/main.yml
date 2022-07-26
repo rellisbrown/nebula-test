@@ -58,4 +58,4 @@ jobs:
 
       - name: Delete Existing Extension
         run: |
-          curl -X DELETE -H "Content-Type: application/json" -H "X-Qlik-xrfkey: ${{ secrets.XRF }}" -H "Authorization: Bearer ${{ secrets.JWT }}" "https://cc-edapps.calibrateconsulting.com/jwt/qrs/extension/name/deploytest?xrfkey=${{ secrets.XRF }}"
+          curl -X DELETE -H "Content-Type: application/json" -H "X-Qlik-xrfkey: ${{ secrets.XRF }}" -H "Authorization: Bearer ${{ secrets.JWT }}" --data-binary "@test.zip" "https://cc-edapps.calibrateconsulting.com/jwt/qrs/extension/name/deploytest?xrfkey=${{ secrets.XRF }}"
