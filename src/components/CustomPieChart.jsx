@@ -159,3 +159,11 @@ const CustomPieChart = ({ id, title, width, height }) => {
 };
 
 export default CustomPieChart;
+
+const chartList = [
+  {
+    category: 'barchart',
+    appId: 1,
+    subcategories: [{ title: 'dsadas', chartId: 1 }],
+  },
+];
